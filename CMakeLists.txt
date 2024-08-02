@@ -13,6 +13,8 @@ add_library(p2prng
 	./src/p2prng.c
 )
 
+target_include_directories(p2prng PUBLIC ./src)
+
 find_package(unofficial-sodium CONFIG QUIET)
 find_package(sodium QUIET)
 find_package(PkgConfig QUIET)
