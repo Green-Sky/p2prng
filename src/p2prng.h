@@ -1,6 +1,10 @@
 #ifndef P2PRNG_H
 #define P2PRNG_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 // # generate random number and mac
@@ -46,5 +50,9 @@ int p2prng_combine_update(uint8_t out_hash[P2PRNG_COMBINE_LEN], const uint8_t pr
 // - generates the random number (msg)
 // - calls p2prng_auth_create()
 int p2prng_gen_and_auth(uint8_t out_rng[P2PRNG_LEN], uint8_t out_key[P2PRNG_MAC_KEY_LEN], uint8_t out_mac[P2PRNG_MAC_LEN], const uint8_t* is, uint32_t is_len);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // P2PRNG_H
